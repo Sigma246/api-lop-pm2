@@ -6,7 +6,7 @@
   "type": "module",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "src/index.js",
+    "start": "node src/index.js",
     "start-dev": "nodemon src/index.js"
   },
   "author": "",
@@ -16,7 +16,7 @@
     "@socket.io/redis-adapter": "^7.1.0",
     "ajv": "^8.10.0",
     "bcrypt": "^5.0.1",
-    "body-parser": "^1.19.1",
+    "body-parser": "^1.19.2",
     "cors": "^2.8.5",
     "express": "^4.17.2",
     "jsonwebtoken": "^8.5.1",
