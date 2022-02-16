@@ -32,16 +32,12 @@ const io = new Server(httpServer, {
   }
 })
 
-/*  
 io.adapter(redisAdapter({ 
   host: connections.redis.host_rds,
   port: connections.redis.port_rds, 
+  auth_pass: connections.redis.pass_rds, 
+  tls: { servername: connections.redis.host_rds }
 }));
- */
- 
-io.adapter(redisAdapter(connections.redis.port_rds, connections.redis.host_rds,
-  { auth_pass: connections.redis.pass_rds, tls: { servername: connections.redis.host_rds }  }));
-
 
 httpServer.listen(config.port, () => {
   logger.info(`App server listen on ${config.host}:${config.port}`);

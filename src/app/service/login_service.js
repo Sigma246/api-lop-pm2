@@ -15,7 +15,7 @@ export const find_or_add = data => Usuario.findOne({email: data.email})
 .catch(e=>{ throw {code: 403, error: e} })
 
 
-// find and add login
-export const find = data => Usuario.findOne({email: data.email, password: data.password})
+// find user login
+export const find = data => Usuario.findOne({email: data.email})
 .then(res=> new Promise ((resolve, reject)=> res == null? reject({data: data, message: "Usuario no registrado / Password incorrecto "}) : resolve(res) ) )
 .catch(e=>{ throw {code: 403, error: e} })
