@@ -22,6 +22,7 @@ export default (io) => {
 
 
       console.log(socket)
+      console.log(reason)
 /* 
       vify_jwt(socket.handshake.auth['x-auth-token'], secret)
       .then( ({user:{ email, nombre } }) => time() 
