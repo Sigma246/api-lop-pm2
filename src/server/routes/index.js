@@ -6,7 +6,7 @@
   *
  ************************************************/
 import login from './login.js'
-//import mailing from './mailing';
+import mailing from './mailing.js';
 //import encuesta from './encuesta';
 
 
@@ -19,7 +19,7 @@ const router = Router();
  *  get: /welcome/
  */
 router.use("/", login);
-//router.use("/", mailing);
+router.use("/", mailing);
 //router.use("/", encuesta);
 
 
