@@ -31,10 +31,10 @@ export default (io) => {
 
         //NEVIANDO NUEVO MENSAJE AL FILTRO
         socket.on('message', menssage =>
-            //add_chat({...menssage, state: 'pending' })  para filtro
-            add_chat({...menssage, state: 'accepted' })
-            //.then(res=> chats_rooms.to( res.filter ).emit('message', {   para filtro
-            .then(res=> chats_rooms.to( res.room ).emit('message', {
+            add_chat({...menssage, state: 'pending' })  // para filtro
+            // add_chat({...menssage, state: 'accepted' })  // sin filtro
+            .then(res=> chats_rooms.to( res.filter ).emit('message', {  // para filtro
+            //.then(res=> chats_rooms.to( res.room ).emit('message', {  // sin filtro
                 _id: res.id,
                 user: res.user,
                 message: res.message,

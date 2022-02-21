@@ -4,7 +4,7 @@
  * Start file, init the app and clusterize pm2+redis  *
  *                                              *
   *
- ************************************************/
+************************************************/
 
 
 import bootstrap from './server/bootstrap.js';

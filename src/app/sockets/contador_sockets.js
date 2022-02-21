@@ -1,6 +1,7 @@
 "use strict";
 
 import jwt from 'jsonwebtoken';
+import { Socket } from 'socket.io';
 import { secret } from '../../config/jwt.js';
 import { add_sessions } from '../service/sessions_service.js';
 
@@ -14,8 +15,14 @@ export default (io) => {
 
   contador.on('connection', socket => {
 
-    socket.on("disconnect", () =>{
+    console.log("entrooo")
+    console.log(socket)
 
+    socket.on("disconnect", reason =>{
+
+
+      console.log(socket)
+/* 
       vify_jwt(socket.handshake.auth['x-auth-token'], secret)
       .then( ({user:{ email, nombre } }) => time() 
         .then(date_out=>{return { 
@@ -31,6 +38,8 @@ export default (io) => {
       )
       .then(add_sessions)
       .catch(e=> {console.log(e);throw e})
+ */
+
 
     });
 
