@@ -3,7 +3,7 @@
   [{
     "name"      : "api-lop",
     "script"    : "src/index.js",
-    "instances" : "max",
+    "instances" : "2",
     "exec_mode" : "cluster",
     "watch"     : true
   }]
