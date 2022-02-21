@@ -15,15 +15,9 @@ export default (io) => {
 
   contador.on('connection', socket => {
 
-    console.log("entrooo")
-    console.log(socket.handshake.query)
-
+   
     socket.on("disconnect", reason =>{
-
-
-      console.log(socket.handshake.query)
-      console.log(reason)
-
+      
       vify_jwt(socket.handshake.auth['x-auth-token'], secret)
       .then( ({user:{ email, nombre } }) => time() 
         .then(date_out=>{return { 
