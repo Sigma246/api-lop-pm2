@@ -22,26 +22,28 @@ import chat_room from './app/sockets/chats_rooms_sockets.js';
 
 const httpServer = http.createServer(app);
 
-bootstrap()
-
 const io = new Server(httpServer, {
-  cors: {
-    origin: "*",
-    methods: ["GET", "POST"],
-    credentials: true
-  }
+    cors: {
+        origin: "*",
+        methods: ["GET", "POST"],
+        credentials: true
+    }
 })
 
-io.adapter(redisAdapter({ 
-  host: connections.redis.host_rds,
-  port: connections.redis.port_rds, 
-  auth_pass: connections.redis.pass_rds, 
-  tls: { servername: connections.redis.host_rds }
+bootstrap();
+
+io.adapter(redisAdapter({
+    host: connections.redis.host_rds,
+    port: connections.redis.port_rds,
+    auth_pass: connections.redis.pass_rds,
+    tls: { servername: connections.redis.host_rds }
 }));
 
-httpServer.listen(config.port, () => {
-  logger.info(`App server listen on ${config.host}:${config.port}`);
+instrument(io, { auth: false });
+contador(io); chat_room(io);
+
+io.httpServer.listen(config.port, err => {
+    logger.info(`App server listen on ${config.host}:${config.port}`);
 })
 
-instrument(io, { auth: false });
-contador(io);chat_room(io);
+

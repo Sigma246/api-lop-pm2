@@ -27,13 +27,13 @@ const __dirname = dirname(__filename)
 // List files in this directory
 let files = fs.readdirSync(__dirname);
 // For every file found add a property to config var
-let config = files.reduce(function(config, file) {
-  // Prevent load this file
-  if(file !== path.basename(__filename)) {
-    let name = path.basename(file, path.extname(file));
-    config[name] = import(path.join(__dirname, file));
-  }
-  return config;
+let config = files.reduce(function (config, file) {
+    // Prevent load this file
+    if (file !== path.basename(__filename)) {
+        let name = path.basename(file, path.extname(file));
+        config[name] = import(path.join(__dirname, file));
+    }
+    return config;
 }, {});
 
 export default config;

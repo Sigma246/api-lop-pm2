@@ -10,7 +10,7 @@
 import mongoose from './../connections/mongoose.js';
 import models from './../app/model/index.js';
 
-export default() => Promise.all([
-  mongoose,
-  models
+export default () => Promise.all([
+    mongoose,
+    models
 ]);

@@ -12,9 +12,9 @@ export default {
     },
     
     redis: {
-      port_rds: process.env.REDISCLOUD_PORT || "6379",   //"6380"
-      host_rds: process.env.REDISCACHEHOSTNAME || "127.0.0.1",
-      pass_rds: process.env.REDISCACHEKEY || "",
-      url_rds: process.env.REDISCLOUD_URL || "redis://127.0.0.1:6379"
+      port_rds: process.env.REDISCLOUD_PORT || "6380",   //"6379,"
+      host_rds: process.env.REDISCACHEHOSTNAME || 'redis-kickoff.redis.cache.windows.net', //"127.0.0.1",
+      pass_rds: process.env.REDISCACHEKEY || "qkVMpb3zilGwCDwzo8snKU3lQGSjjLwNUAzCaCjMZKE=",
+      url_rds: process.env.REDISCLOUD_URL || "redis-kickoff.redis.cache.windows.net:6380,password=qkVMpb3zilGwCDwzo8snKU3lQGSjjLwNUAzCaCjMZKE=,ssl=True,abortConnect=False"
     }
 };
